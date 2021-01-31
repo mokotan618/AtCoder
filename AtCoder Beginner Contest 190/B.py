@@ -5,7 +5,7 @@ i = 0
 count = 0
 
 while i < N:
-    if S > table[i][0] 0 and D - table[i][1] > 0 :
+    if S > table[i][0] and table[i][1] > D :
         count = 1
     i += 1
 
