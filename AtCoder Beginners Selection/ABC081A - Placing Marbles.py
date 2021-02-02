@@ -1,3 +1,4 @@
+# https://atcoder.jp/contests/abs/tasks/abc081_a
 sss = input()
 value = int(sss)
 #print(value)

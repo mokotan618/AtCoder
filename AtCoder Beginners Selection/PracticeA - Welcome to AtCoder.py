@@ -1,3 +1,4 @@
+# https://atcoder.jp/contests/abs/tasks/practice_1
 a = int(input())
 b_c = [int(s) for s in input().split()]
 s = input()
