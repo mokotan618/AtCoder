@@ -25,7 +25,7 @@ int main() {
   int count = 1;
   
   // 上に
-  for(int i = 1; i < h+2; i++){
+  for(int i = 1; i < 101; i++){
     if(s[x-i][y] == '.'){
       //cout << '(' << x-i << ',' << y <<')' << endl;
       count++;
@@ -36,7 +36,7 @@ int main() {
   }
 
   // 下に
-  for(int i = 1; i < h+2; i++){
+  for(int i = 1; i < 101; i++){
     if(s[x+i][y] == '.'){
       //cout << '(' << x+i << ',' << y <<')' << endl;
       count++;
@@ -47,7 +47,7 @@ int main() {
   }
 
   // 左に
-  for(int i = 1; i < h+2; i++){
+  for(int i = 1; i < 101; i++){
     if(s[x][y-i] == '.'){
       //cout << '(' << x << ',' << y-i <<')' << endl;
       count++;
@@ -58,7 +58,7 @@ int main() {
   }
 
   // 右に
-  for(int i = 1; i < h+2; i++){
+  for(int i = 1; i < 101; i++){
     if(s[x][y+i] == '.'){
       //cout << '(' << x << ',' << y+i <<')' << endl;
       count++;
