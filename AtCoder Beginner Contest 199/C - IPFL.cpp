@@ -10,37 +10,38 @@ int main(){
 
   cin >> N >> S >> Q;
 
-  vector<int> T(Q);
-  vector<int> A(Q);
-  vector<int> B(Q);
+  vector<int> T(Q), A(Q), B(Q);
 
   for(int i = 0; i < Q; i++){
     cin >> T[i] >> A[i] >> B[i];
   }
 
-  string temp1 = "";
-  string temp2 = "";
+  for(int i = 0; i < Q; i++){
+    A[i]--; B[i]--;
+  }
 
+  string S1 = S.substr(0, N);
+  string S2 = S.substr(N);
+ 
   for(int i = 0; i < Q; i++){
     if(T[i] == 1){
-      temp1 = S[A[i]-1];
-      temp2 = S[B[i]-1];
-      S.replace(A[i]-1, 1, temp2);
-      S.replace(B[i]-1, 1, temp1);
-      //cout << S << endl;
+      if(B[i] < N){
+        swap(S1[A[i]], S1[B[i]]);
+        //cout << "yaa" << endl;
+      }else if((A[i] < N ) && (N <= B[i])){
+        swap(S1[A[i]], S2[B[i]-N]);
+        //cout << "hin" << endl;
+      }else if(N <= A[i]){
+        swap(S2[A[i]-N], S2[B[i]-N]);
+        //cout << "owari" << endl;
+      }
+      //cout << S1 + S2 << endl;
     }else{
-      temp1 = S.substr(0,N);
-      temp2 = S.substr(N);
-      S = temp2 + temp1;
-      //cout << S << endl;
+        swap(S1, S2);
+      //cout << S1 + S2 << endl;
     }
   }
-  cout << S << endl;
-
-  //cout << S << endl;
-  //for(int i = 0; i < Q; i++){
-  //  cout << T[i] << " " << A[i] << " " << B[i] << endl;
-  //}
+  cout << S1 + S2 << endl;
 
   return 0;
 }
